@@ -1,0 +1,26 @@
+{
+  "name": "owlbearbot",
+  "version": "1.0.0",
+  "description": "A Discord Bot with High Perception",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Electromasta/OwlbearBot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Electromasta/OwlbearBot/issues"
+  },
+  "homepage": "https://github.com/Electromasta/OwlbearBot#readme",
+  "dependencies": {
+    "discord.js": "^14.17.3",
+    "urban": "^0.3.4",
+    "youtube-sr": "^4.3.11"
+  }
+}
