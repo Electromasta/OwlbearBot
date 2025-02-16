@@ -14,10 +14,11 @@ module.exports = {
 
     let error = false;
     let reply = "At least one Term is not a number, hoot-hoot";
-    let terms = dicestring.split(/d(.*?)\+/);
+    let terms = dicestring.split(/[d+]+/);
 
-    if (terms.length !== 3) { error = true; }
-    for (let term of terms) { if (isNaN(term)) { error = true; console.log("isNaN"); } }
+    if (terms[0].length === 0) { terms.splice(0, 1, 1) }
+    if (terms.length === 2) { terms.push(0); }
+    if (terms.length > 3) { error = true; reply = "Too many terms, hoot-hoot"; }
     if (terms[1] > 100) { error = true; reply = "Dice can't be larger than 100, hoot-hoot"; }
     if ((terms[0] * terms[2]) > 251) { error = true; reply = "That's too scary, hoot-hoot"; }
 
@@ -33,7 +34,7 @@ module.exports = {
       reply = reply.concat("[ ")
       for (let [i, dice] of diceresults.entries()) {
         let d = ((Math.floor(Math.random() * Number(terms[1])) + 1));
-        console.log(d);
+        //console.log(d);
         result += d;
         reply = reply.concat(d);
         if (i+1 !== diceresults.length) { reply = reply.concat(", "); }
