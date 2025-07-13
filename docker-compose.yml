@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  owlbear-bot:
+    build: .
+    container_name: owlbear-bot
+    volumes:
+      - /volume1/docker/config/owlbear/config.json:/app/config.json:ro # Mount config.json
+      - .:/app # Mount the entire project directory for live changes (optional, useful for development)
+    restart: unless-stopped
